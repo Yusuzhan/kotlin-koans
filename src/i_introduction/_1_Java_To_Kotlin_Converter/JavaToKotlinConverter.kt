@@ -13,5 +13,17 @@ fun todoTask1(collection: Collection<Int>): Nothing = TODO(
 
 
 fun task1(collection: Collection<Int>): String {
-    todoTask1(collection)
+    var sb: StringBuilder = StringBuilder()
+    sb.append("{")
+    var it: Iterator<Int> = collection.iterator()
+    while (it.hasNext()){
+        var e: Int = it.next()
+        sb.append(e)
+        if (it.hasNext()){
+            sb.append(", ")
+        }
+    }
+    sb.append("}")
+    println(sb)
+    return sb.toString()
 }
