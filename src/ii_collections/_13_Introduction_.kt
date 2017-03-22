@@ -10,9 +10,11 @@ import java.util.*
 /*
  *  There are many operations that help to transform one collection into another, starting with 'to'
  */
+
+
+
 fun example0(list: List<Int>) {
     list.toSet()
-
     list.toCollection(HashSet<Int>())
 }
 
