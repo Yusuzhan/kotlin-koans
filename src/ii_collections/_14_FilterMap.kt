@@ -13,9 +13,9 @@ fun Shop.getCitiesCustomersAreFrom(): Set<City> {
     return customers.map { it.city }.toSet()
 }
 
-fun Shop.getCustomersFrom(city: City): List<Customer> {
-    // Return a list of the customers who live in the given city
-    return customers.filter { it.city == city }.toList()
-}
+fun Shop.getCustomersFrom(city: City): List<Customer> = customers.filter { it.city == city }
+// Return a list of the customers who live in the given city
+
+
 
 
