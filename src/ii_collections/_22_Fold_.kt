@@ -16,6 +16,8 @@ fun Shop.getSetOfProductsOrderedByEveryCustomer(): Set<Product> {
     // Return the set of products ordered by every customer
     return customers.fold(allOrderedProducts, {
         orderedByAll, customer ->
-        todoCollectionTask()
+        //orderedByAll - (orderedByAll - customer.orderedProducts)
+        //orderedByAll.filter { customer.orderedProducts.contains(it) }.toSet()
+        orderedByAll.intersect(customer.orderedProducts)
     })
 }
