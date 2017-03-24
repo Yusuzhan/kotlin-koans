@@ -5,6 +5,23 @@ import java.util.*
 
 fun MyDate.nextDay() = addTimeIntervals(DAY, 1)
 
+operator fun MyDate.plus(timeInterval: TimeInterval): MyDate{
+    return this.addTimeIntervals(timeInterval, 1)
+}
+
+operator fun MyDate.plus(r: RepeatedTimeInterval): MyDate{
+    return this.addTimeIntervals(r.ti, r.n)
+}
+
+operator fun TimeInterval.times(n: Int): RepeatedTimeInterval{
+    return RepeatedTimeInterval(this, n)
+}
+
+
+class RepeatedTimeInterval(val ti: TimeInterval, val n: Int){
+
+}
+
 fun MyDate.addTimeIntervals(timeInterval: TimeInterval, number: Int): MyDate {
     val c = Calendar.getInstance()
     c.set(year + if (timeInterval == YEAR) number else 0, month, dayOfMonth)

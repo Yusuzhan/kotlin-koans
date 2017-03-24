@@ -3,7 +3,30 @@ package iii_conventions
 import util.TODO
 
 
-class Invokable
+class Invokable {
+
+
+    var count = 0
+
+    fun getNumberOfInvocations(): Int = count
+    operator fun  invoke(): Invokable{
+        count++
+        return this
+    }
+
+}
+
+class Foo2{
+    operator fun invoke() {
+        println("invoke")
+    }
+
+}
+
+fun main(args: Array<String>) {
+    val  f: Foo2 = Foo2()
+    f()
+}
 
 fun todoTask31(): Nothing = TODO(
     """
@@ -14,6 +37,8 @@ fun todoTask31(): Nothing = TODO(
     references = { invokable: Invokable -> })
 
 fun task31(invokable: Invokable): Int {
-    todoTask31()
-//    return invokable()()()().getNumberOfInvocations()
+    //todoTask31()
+    return invokable()()()().getNumberOfInvocations()
 }
+
+

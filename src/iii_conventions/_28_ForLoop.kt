@@ -32,8 +32,10 @@ fun todoTask28(): Nothing = TODO(
 
 
 fun iterateOverDateRange(firstDate: MyDate, secondDate: MyDate, handler: (MyDate) -> Unit) {
-    todoTask28()
-//    for (date in firstDate..secondDate) {
-//        handler(date)
-//    }
+//    todoTask28()
+    //println("firstDate $firstDate")
+    for (date in firstDate..secondDate) {
+        println("date is $date")
+        handler(date)
+    }
 }
