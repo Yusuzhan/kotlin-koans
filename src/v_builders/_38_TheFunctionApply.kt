@@ -1,5 +1,7 @@
 package v_builders.examples
 
+import java.util.*
+
 fun todoTask38(): Nothing = TODO(
     """
         Task 38.
@@ -9,8 +11,21 @@ fun todoTask38(): Nothing = TODO(
 )
 
 fun <T> T.myApply(f: T.() -> Unit): T {
-    todoTask38()
+    this.f()
+    return this
 }
+
+//fun StringBuilder.myApply(f: StringBuilder.() -> Unit): String{
+//    val str = StringBuilder()
+//    str.f()
+//    return str.toString()
+//}
+//
+//fun Map<Int, String>.myApply(f: HashMap<Int, String>.() -> Unit): Map<Int, String>{
+//    val map = hashMapOf<Int, String>()
+//    map.f()
+//    return map
+//}
 
 fun buildString(): String {
     return StringBuilder().myApply {
