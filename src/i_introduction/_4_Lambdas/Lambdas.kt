@@ -11,6 +11,10 @@ fun example() {
     sum(1, square(2)) == 5
 }
 
+fun main(vararg args: String) {
+    println("haha")
+}
+
 fun todoTask4(collection: Collection<Int>): Nothing = TODO(
         """
         Task 4.
@@ -21,16 +25,18 @@ fun todoTask4(collection: Collection<Int>): Nothing = TODO(
         documentation = doc4(),
         references = { JavaCode4().task4(collection) })
 
-fun task4(collection: Collection<Int>): Boolean {
+/** previous solution*/
+fun _task4(collection: Collection<Int>): Boolean {
     val lambda = { x: Int -> x % 42 }
     collection.forEach {
-        if (lambda(it) == 0){
+        if (lambda(it) == 0) {
             return true
         }
     }
     return false
 }
 
+fun task4(collection: Collection<Int>): Boolean = collection.any { it % 42 == 0 }
 
 
 

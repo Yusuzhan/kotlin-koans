@@ -6,10 +6,10 @@ import org.junit.Test
 
 class _04_Lambdas() {
     @Test fun contains() {
-        assertTrue(task4(listOf(1, 2, 3, 126, 555)))
+        assertTrue(_task4(listOf(1, 2, 3, 126, 555)))
     }
 
     @Test fun notContains() {
-        assertFalse(task4(listOf(44)))
+        assertFalse(_task4(listOf(44)))
     }
 }
